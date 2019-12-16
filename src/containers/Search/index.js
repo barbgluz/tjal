@@ -1,0 +1,52 @@
+import React, { Component } from 'react';
+import tribunais from '../../data/tribunais'
+
+import styles from './styles.module.css';
+
+class Search extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      results: this.props.results === 'true'
+    }
+  }
+
+  search(e) {
+    e.preventDefault()
+    this.setState({results: !this.state.results})
+  }
+
+  render() {
+    let options = null;
+
+    options = tribunais.map(option => {
+      return(
+        <option value={option.id} key={option.id}>{option.nome}</option>
+        )
+    })
+
+    let classes = this.state.results? [styles.collapse] : ''
+
+    return(
+      <div className={styles.Search + ' ' + classes} id="searchContainer">
+        <h1>Buscar</h1>
+        <p>Selecione um tribunal para listar os processos ou buscar pelo número unificado</p>
+
+        <form>
+          <select>
+            <option value="">Tribunal</option>
+            {options}
+          </select>
+
+          <input type="text" placeholder="Número do processo"/>
+
+          <button onClick={(event) => this.search(event)}>Buscar</button>
+        </form>
+      </div>
+      );
+}
+}
+
+export default Search;
