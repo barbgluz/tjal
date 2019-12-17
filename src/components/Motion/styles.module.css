@@ -5,6 +5,7 @@
   margin-right: 5em;
   margin-bottom: 1em;
   border-radius: 2px;
+  min-width: 300px;
 }
 
 h3 {
@@ -20,4 +21,10 @@ h3 {
 
 .Content {
   padding-top: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .Motion {
+    margin-right: 0;
+  }
 }
