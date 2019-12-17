@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InputMask from 'react-input-mask';
 import tribunais from '../../data/tribunais'
+import image from './background.jpg'
 
 import styles from './styles.module.css';
 
@@ -32,7 +33,8 @@ class Search extends Component {
 
     return(
       <div className={styles.Search + ' ' + classes} id="searchContainer">
-        <h1>Buscar</h1>
+        <img src={image} alt="" />
+        <h1>Buscador de Processos</h1>
         <p>Selecione um tribunal para listar os processos ou buscar pelo número unificado</p>
 
         <form>

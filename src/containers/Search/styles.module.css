@@ -1,19 +1,22 @@
 .Search {
   width: 100vw;
-  height: 75vh;
-  max-height: 75vh;
+  max-height: 100vh;
   margin: 0 auto;
   padding: 4em 5em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: purple;
 }
 
 h1 {
   font-size: 2em;
   font-weight: 600;
+  color: #161616;
+}
+
+p {
+  color: #1c1c1c;
 }
 
 form {
@@ -38,7 +41,7 @@ input {
 }
 
 button {
-  background-color: darkgray;
+  background-color: #5c92ea;
   color: white;
   text-align: center;
   width: 20%;
@@ -46,8 +49,6 @@ button {
 }
 
 .Search.collapse {
-  top: 0;
-  position: absolute;
   align-items: end;
   max-height: 65px;
   height: 100%;
