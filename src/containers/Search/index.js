@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import InputMask from 'react-input-mask';
 import tribunais from '../../data/tribunais'
 
 import styles from './styles.module.css';
@@ -40,7 +41,7 @@ class Search extends Component {
             {options}
           </select>
 
-          <input type="text" placeholder="Número do processo"/>
+          <InputMask mask="9999999-99.9999.9.99.9999" placeholder="Número do processo"/>
 
           <button onClick={(event) => this.search(event)}>Buscar</button>
         </form>
