@@ -11,8 +11,9 @@ class Search extends Component {
     super(props)
 
     this.state = {
-      results: this.props.results === 'true'
+      results: this.props.results
     }
+
   }
 
   search(e) {
