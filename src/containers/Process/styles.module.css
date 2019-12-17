@@ -1,6 +1,9 @@
 .Process {
   display: flex;
   flex-direction: row;
+  background-color: #eff0f2;
+  width: 100%;
+  padding: 2em 3em;
 }
 
 .Main {
