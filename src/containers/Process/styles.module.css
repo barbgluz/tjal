@@ -14,3 +14,8 @@ h1 {
 .Sidebar {
   width: 30%;
 }
+
+hr {
+  color: #ccc;
+  margin-block: 2em;
+}
