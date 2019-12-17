@@ -1,0 +1,12 @@
+.Process {
+  display: flex;
+  flex-direction: row;
+}
+
+.Main {
+  width: 70%;
+}
+
+.Sidebar {
+  width: 30%;
+}
