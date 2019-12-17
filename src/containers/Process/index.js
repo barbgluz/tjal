@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 
 import motions from '../../data/motions';
 import details from '../../data/details';
+import parts from '../../data/parts';
 
 import styles from './styles.module.css';
 
 import Motion from '../../components/Motion';
 import Details from '../../components/Details';
+import Part from '../../components/Part';
 
 class Process extends Component {
 
@@ -16,6 +18,13 @@ class Process extends Component {
     movimentacoes = motions.map(motion => {
       return(
         <Motion title={motion.title} date={motion.date} content={motion.content} />
+      )
+    })
+
+    let partes = null
+    partes = parts.map(part => {
+      return (
+        <Part name={part.nome} type={part.tipo} representation={part.representantes}/>
       )
     })
 
@@ -35,7 +44,8 @@ class Process extends Component {
           </div>
           <hr />
           <div className={styles.Partes}>
-            <p>parte</p>
+            <h4>Partes envolvidas</h4>
+            { partes }
           </div>
         </div>
       </div>
