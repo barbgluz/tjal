@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 import motions from '../../data/motions';
+import details from '../../data/details';
 
 import styles from './styles.module.css';
 
 import Motion from '../../components/Motion';
+import Details from '../../components/Details';
 
 class Process extends Component {
 
@@ -29,7 +31,7 @@ class Process extends Component {
 
         <div className={styles.Sidebar}>
           <div className={styles.Detalhes}>
-            <p>Detalhe</p>
+            <Details detail={details}/>
           </div>
           <hr />
           <div className={styles.Partes}>
