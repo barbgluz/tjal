@@ -40,6 +40,7 @@ class Process extends Component {
 
         <div className={styles.Sidebar}>
           <div className={styles.Detalhes}>
+            <h4>Detalhes do processo</h4>
             <Details detail={details}/>
           </div>
           <hr />

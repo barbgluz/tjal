@@ -6,8 +6,6 @@ const details = (props) => {
 
   return(
     <div>
-      <h4>Detalhes do processo</h4>
-
       <p><span class={styles.Label}>Juiz</span> { props.detail.juiz }</p>
       <p><span class={styles.Label}>Classe</span> { props.detail.classe }</p>
       <p><span class={styles.Label}>Área</span> { props.detail.area }</p>
