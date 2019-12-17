@@ -39,12 +39,15 @@ class Search extends Component {
         <p>Selecione um tribunal para listar os processos ou buscar pelo número unificado</p>
 
         <form>
-          <select>
+          <select aria-label="Tribunal">
             <option value="">Tribunal</option>
             {options}
           </select>
 
-          <InputMask mask="9999999-99.9999.9.99.9999" placeholder="Número do processo"/>
+          <InputMask
+            mask="9999999-99.9999.9.99.9999"
+            aria-label="Número do processo"
+            placeholder="Número do processo"/>
 
           <button onClick={(event) => this.search(event)}>Buscar</button>
         </form>
