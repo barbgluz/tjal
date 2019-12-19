@@ -1,0 +1,9 @@
+.Container {
+  max-width: 1900px;
+}
+
+@media screen and (max-width: 500px) {
+  .Container {
+    padding: 2em;
+  }
+}

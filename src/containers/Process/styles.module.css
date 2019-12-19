@@ -1,0 +1,68 @@
+.Process {
+  display: flex;
+  flex-direction: row;
+  background-color: #eff0f2;
+  width: 100%;
+  padding: 2em 3em;
+}
+
+.Main {
+  width: 70%;
+}
+
+h1 {
+  padding: 1em 0;
+}
+
+.Sidebar {
+  width: 30%;
+}
+
+hr {
+  color: #ccc;
+  margin-block: 2em;
+}
+
+h4 {
+  color: #373737;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 768px) {
+  .Process {
+    flex-direction: column;
+  }
+
+  .Main {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  .Sidebar {
+    width: 100%;
+  }
+
+  h4 {
+    width: 100%;
+  }
+
+  .Partes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.5em;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  h1 {
+    font-size: 1.2em;
+  }
+}
