@@ -11,14 +11,24 @@ class Search extends Component {
     super(props)
 
     this.state = {
-      results: this.props.results
+      results: this.props.results,
+      processNumber: ""
     }
+
+    this.handleChange = this.handleChange.bind(this);
 
   }
 
   search(e) {
     e.preventDefault()
     this.setState({results: !this.state.results})
+  }
+
+  handleChange(event) {
+    let number = event.target.value
+    number = number.replace(/[.*_*\-*]/g, '')
+
+    this.setState({processNumber: number})
   }
 
   render() {
@@ -47,6 +57,8 @@ class Search extends Component {
           <InputMask
             mask="9999999-99.9999.9.99.9999"
             aria-label="Número do processo"
+            value={this.state.processNumber}
+            onChange={this.handleChange}
             placeholder="Número do processo"/>
 
           <button onClick={(event) => this.search(event)}>Buscar</button>
