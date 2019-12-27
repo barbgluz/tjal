@@ -24,8 +24,10 @@ class Search extends Component {
   search(e) {
     e.preventDefault()
 
-    this.props.onSearch(this.state.processNumber)
-    this.setState({'results': this.props.results})
+    if(!this.props.process || this.state.processNumber !== this.props.process.numero_unico) {
+      this.props.onSearch(this.state.processNumber)
+      this.setState({'results': this.props.results})
+    }
   }
 
   handleChange(event) {
