@@ -1,0 +1,12 @@
+.Error {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: white;
+}
+
+.ErrorImg {
+  filter: grayscale(100%);
+  align-self: center;
+}

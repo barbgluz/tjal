@@ -39,7 +39,7 @@ class Search extends Component {
 
   render() {
 
-    let classes = this.props.results? [styles.collapse] : ''
+    let classes = (this.props.results || this.props.error)? [styles.collapse] : ''
 
     return(
       <div className={styles.Search + ' ' + classes} id="searchContainer">
@@ -65,6 +65,7 @@ class Search extends Component {
 const mapStateToProps = state => {
   return {
     results: state.process != null,
+    error: state.error,
     process: state.process
   }
 }
