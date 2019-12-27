@@ -20,7 +20,7 @@ class Layout extends Component {
 
   render() {
 
-    let results = this.props.process != null? <Process process={this.props.process}/> : null
+    let results = (this.props.process != null && this.props.error == null)? <Process process={this.props.process}/> : null
     let loading = this.props.loading? <div className={styles.Spinner}> <Spinner /> </div> : null
     let errors = this.props.error? <Error /> : null
 

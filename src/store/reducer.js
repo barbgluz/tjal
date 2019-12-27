@@ -23,6 +23,7 @@ const fetchProcessSuccess = (state, action) => {
 const fetchProcessFail = (state, action) => {
   return updateObject(state, {
     error: action.error,
+    process: null,
     loading: false,
   });
 };
