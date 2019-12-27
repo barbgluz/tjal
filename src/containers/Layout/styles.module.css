@@ -1,5 +1,6 @@
 .Container {
-  max-width: 1900px;
+  max-width: 100%;
+  background-color: #eff0f2;
 }
 
 .Spinner {

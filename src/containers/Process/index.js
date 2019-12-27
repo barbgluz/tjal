@@ -12,16 +12,22 @@ class Process extends Component {
   render() {
 
     let movimentacoes = <p>Não há movimentações.</p>
-    movimentacoes = this.props.process.movimentacoes.map((motion, i) => {
+    movimentacoes = this.props.process.movimentacoes.map( motion => {
       return(
-        <Motion title={motion.titulo} date={motion.data} content={motion.conteudo} key={i} />
+        <Motion title={motion.titulo}
+          date={motion.data}
+          content={motion.conteudo}
+          key={motion.id} />
       )
     })
 
     let partes = null
-    partes = this.props.process.partes.map((part, i) => {
+    partes = this.props.process.partes.map( part => {
       return (
-        <Part name={part.nome} type={part.tipo} representation={part.representantes} key={i}/>
+        <Part name={part.nome}
+          type={part.tipo}
+          representation={part.representantes}
+          key={part.id}/>
       )
     })
 
