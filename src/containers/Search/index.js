@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import InputMask from 'react-input-mask';
-import tribunais from '../../data/tribunais'
+import { connect } from 'react-redux';
+
 import image from './background.jpg'
 
+import * as actions from '../../store/index';
 import styles from './styles.module.css';
 
 class Search extends Component {
@@ -11,7 +13,7 @@ class Search extends Component {
     super(props)
 
     this.state = {
-      results: this.props.results,
+      results: null,
       processNumber: ""
     }
 
@@ -21,7 +23,9 @@ class Search extends Component {
 
   search(e) {
     e.preventDefault()
-    this.setState({results: !this.state.results})
+
+    this.props.onSearch(this.state.processNumber)
+    this.setState({'results': this.props.results})
   }
 
   handleChange(event) {
@@ -32,15 +36,8 @@ class Search extends Component {
   }
 
   render() {
-    let options = null;
 
-    options = tribunais.map(option => {
-      return(
-        <option value={option.id} key={option.id}>{option.nome}</option>
-        )
-    })
-
-    let classes = this.state.results? [styles.collapse] : ''
+    let classes = this.props.results? [styles.collapse] : ''
 
     return(
       <div className={styles.Search + ' ' + classes} id="searchContainer">
@@ -49,11 +46,6 @@ class Search extends Component {
         <p>Selecione um tribunal para listar os processos ou buscar pelo número unificado</p>
 
         <form>
-          <select aria-label="Tribunal">
-            <option value="">Tribunal</option>
-            {options}
-          </select>
-
           <InputMask
             mask="9999999-99.9999.9.99.9999"
             aria-label="Número do processo"
@@ -68,4 +60,19 @@ class Search extends Component {
 }
 }
 
-export default Search;
+const mapStateToProps = state => {
+  return {
+    results: state.process != null,
+    process: state.process
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSearch: (num) => {
+      dispatch(actions.fetchProcess(num))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
