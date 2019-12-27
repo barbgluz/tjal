@@ -5,6 +5,7 @@ import styles from './styles.module.css';
 
 import Search from '../Search/index';
 import Process from '../Process/index';
+import Spinner from '../../ui/Spinner/index';
 
 class Layout extends Component {
 
@@ -14,15 +15,12 @@ class Layout extends Component {
     this.state = {
       results: this.props.results
     }
-
-    console.log(this.state.results)
-
   }
 
   render() {
 
     let results = this.props.process != null? <Process process={this.props.process}/> : null
-    let loading = this.props.loading? "LOADING" : null
+    let loading = this.props.loading? <div className={styles.Spinner}> <Spinner /> </div> : null
 
     return(
       <div className={styles.Layout}>
