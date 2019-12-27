@@ -14,8 +14,3 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 500px) {
-  .Container {
-    padding: 2em;
-  }
-}

@@ -10,3 +10,20 @@
   filter: grayscale(100%);
   align-self: center;
 }
+
+@media screen and (max-width: 768px) {
+  .Error {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Error {
+    justify-content: center;
+    padding: 1em;
+  }
+
+  .ErrorImg {
+    width: 75%;
+  }
+}
