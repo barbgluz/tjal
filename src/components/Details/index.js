@@ -10,7 +10,7 @@ const details = (props) => {
       <p><span className={styles.Label}>Classe</span> { props.detail.classe }</p>
       <p><span className={styles.Label}>Área</span> { props.detail.area }</p>
       <p><span className={styles.Label}>Assunto</span> { props.detail.assunto }</p>
-      <p><span className={styles.Label}>Valor</span> R${ props.detail.valor }</p>
+      <p><span className={styles.Label}>Valor</span> R$ { props.detail.valor }</p>
     </div>
   )
 }

@@ -5,10 +5,10 @@ import styles from './styles.module.css';
 const part = (props) => {
 
   let representation = null
-  representation = props.representation.map(rep => {
+  representation = props.representation.map( rep => {
     return(
-      <div className={styles.Part}>
-        <p className={styles.Name}>{rep.nome} </p>
+      <div className={styles.Part} key={ rep.id }>
+        <p className={styles.Name}>{ rep.nome } </p>
         <p className={styles.Type}>{ rep.tipo }</p>
       </div>
       )

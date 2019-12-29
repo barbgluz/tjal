@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-
-import motions from '../../data/motions';
-import details from '../../data/details';
-import parts from '../../data/parts';
+import { connect } from 'react-redux';
 
 import styles from './styles.module.css';
 
@@ -15,23 +12,29 @@ class Process extends Component {
   render() {
 
     let movimentacoes = <p>Não há movimentações.</p>
-    movimentacoes = motions.map(motion => {
+    movimentacoes = this.props.process.movimentacoes.map( motion => {
       return(
-        <Motion title={motion.title} date={motion.date} content={motion.content} />
+        <Motion title={motion.titulo}
+          date={motion.data}
+          content={motion.conteudo}
+          key={motion.id} />
       )
     })
 
     let partes = null
-    partes = parts.map(part => {
+    partes = this.props.process.partes.map( part => {
       return (
-        <Part name={part.nome} type={part.tipo} representation={part.representantes}/>
+        <Part name={part.nome}
+          type={part.tipo}
+          representation={part.representantes}
+          key={part.id}/>
       )
     })
 
     return(
       <div className={styles.Process}>
         <div className={styles.Main}>
-          <h1>Processo n. 0067154-55.2010.8.02.0001 </h1>
+          <h1>Processo n. {this.props.process.numero_unico} </h1>
 
           <div className={styles.Movimentacoes}>
             { movimentacoes }
@@ -41,7 +44,7 @@ class Process extends Component {
         <div className={styles.Sidebar}>
           <div className={styles.Detalhes}>
             <h4>Detalhes do processo</h4>
-            <Details detail={details}/>
+            <Details detail={this.props.process}/>
           </div>
           <hr />
           <div className={styles.Partes}>
@@ -54,4 +57,10 @@ class Process extends Component {
   }
 }
 
-export default Process;
+const mapStateToProps = state => {
+  return {
+    process: state.process
+  }
+}
+
+export default connect(mapStateToProps)(Process);

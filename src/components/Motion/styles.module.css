@@ -27,4 +27,8 @@ h3 {
   .Motion {
     margin-right: 0;
   }
+
+  .Date {
+    font-size: .8em;
+  }
 }

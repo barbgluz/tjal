@@ -1,8 +1,6 @@
 .Process {
   display: flex;
   flex-direction: row;
-  background-color: #eff0f2;
-  width: 100%;
   padding: 2em 3em;
 }
 
@@ -31,7 +29,7 @@ h4 {
 
 @media screen and (max-width: 768px) {
   .Process {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .Main {

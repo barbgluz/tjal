@@ -1,5 +1,5 @@
 .Search {
-  width: 100vw;
+  width: 100%;
   max-height: 100vh;
   margin: 0 auto;
   padding: 4em 5em;
@@ -89,16 +89,32 @@ button {
     width: 100%;
   }
 
-  select {
-    display: none;
+  .Search {
+    padding: 4em 2em;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  form {
+    width: auto;
   }
 
   input {
     width: 75%;
+  }
+
+  button {
+    width: 25%;
+  }
+
+  .Search.collapse > form > input {
     margin-left: 1em;
   }
 
   .Search.collapse > form > button {
     padding-left: 1em;
   }
+
 }

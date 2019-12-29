@@ -1,0 +1,19 @@
+.Spinner {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  border: 5px solid rgba(255,255,255);
+  border-radius: 50%;
+  border-top-color: #537ddf;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg);  }
+
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg);  }
+
+}
