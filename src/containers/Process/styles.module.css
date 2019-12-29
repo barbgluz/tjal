@@ -29,7 +29,7 @@ h4 {
 
 @media screen and (max-width: 768px) {
   .Process {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .Main {

@@ -89,12 +89,27 @@ button {
     width: 100%;
   }
 
-  select {
-    display: none;
+  .Search {
+    padding: 4em 2em;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  form {
+    width: auto;
   }
 
   input {
     width: 75%;
+  }
+
+  button {
+    width: 25%;
+  }
+
+  .Search.collapse > form > input {
     margin-left: 1em;
   }
 
