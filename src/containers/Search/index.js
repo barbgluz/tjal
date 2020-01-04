@@ -7,7 +7,7 @@ import image from './background.jpg'
 import * as actions from '../../store/index';
 import styles from './styles.module.css';
 
-class Search extends Component {
+export class Search extends Component {
 
   constructor(props) {
     super(props)
