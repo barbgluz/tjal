@@ -4,7 +4,6 @@ import { configure, shallow  } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import { Process } from './index';
-import Motion from '../../components/Motion/index';
 import Part from '../../components/Part/index';
 
 configure({adapter: new Adapter()});
@@ -36,7 +35,7 @@ describe('<Process />', () => {
   });
 
   it('should not render any part component if `partes` is empty', () => {
-    expect(wrapper.exists('Part')).toEqual(false)
+    expect(wrapper.exists(Part)).toEqual(false)
   });
 
 })
