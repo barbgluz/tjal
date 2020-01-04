@@ -8,7 +8,7 @@ import Process from '../Process/index';
 import Spinner from '../../ui/Spinner/index';
 import Error from '../../ui/Error/index';
 
-class Layout extends Component {
+export class Layout extends Component {
 
   constructor(props) {
     super(props)
