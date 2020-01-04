@@ -7,29 +7,33 @@ import Motion from '../../components/Motion';
 import Details from '../../components/Details';
 import Part from '../../components/Part';
 
-class Process extends Component {
+export class Process extends Component {
 
   render() {
 
     let movimentacoes = <p>Não há movimentações.</p>
-    movimentacoes = this.props.process.movimentacoes.map( motion => {
-      return(
-        <Motion title={motion.titulo}
-          date={motion.data}
-          content={motion.conteudo}
-          key={motion.id} />
-      )
-    })
+    if(this.props.motions) {
+      movimentacoes = this.props.motions.map( motion => {
+        return(
+          <Motion title={motion.titulo}
+            date={motion.data}
+            content={motion.conteudo}
+            key={motion.id} />
+          )
+      })
+    }
 
     let partes = null
-    partes = this.props.process.partes.map( part => {
-      return (
-        <Part name={part.nome}
-          type={part.tipo}
-          representation={part.representantes}
-          key={part.id}/>
-      )
-    })
+    if(this.props.parts) {
+      partes = this.props.process.partes.map( part => {
+        return (
+          <Part name={part.nome}
+            type={part.tipo}
+            representation={part.representantes}
+            key={part.id}/>
+          )
+      })
+    }
 
     return(
       <div className={styles.Process}>
@@ -59,7 +63,9 @@ class Process extends Component {
 
 const mapStateToProps = state => {
   return {
-    process: state.process
+    process: state.process,
+    motions: state.process.movimentacoes,
+    parts: state.process.partes
   }
 }
 
